@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      Infologic ITS - IT Solutions, ERP, Zoho & Security Systems in Bahrain
+    </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      content="IT Solutions Bahrain, Hardware Solutions, Zoho Partner Bahrain, ERP Implementation, CCTV Security, System Integration, Structured Cabling, Cloud Solutions, Zoho Books, Zoho CRM, Network Solutions"
+      name="keywords"
+    />
+    <meta
+      content="Infologic ITS is your trusted IT solutions partner in Bahrain. We provide hardware, system integration, ERP, Zoho cloud solutions, CCTV security systems, and IT consultancy services. Authorized Zoho Partner with 24/7 support."
+      name="description"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="Infologic ITS - Complete IT Solutions in Bahrain"
+    />
+    <meta
+      property="og:description"
+      content="Your trusted partner in IT Infrastructure, Security Systems, ERP, and Zoho Cloud Solutions in Bahrain"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://infologicits.com" />
+    <meta
+      property="og:image"
+      content="https://infologicits.com/img/og-image.jpg"
+    />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Infologic ITS - IT Solutions in Bahrain"
+    />
+    <meta
+      name="twitter:description"
+      content="Complete IT Infrastructure, ERP, Zoho & Security Solutions"
+    />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="lib/animate/animate.min.css" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+
+    <style>
+      /* Make all service cards same height */
+      .service-item {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      /* Equalize card height within each column */
+      .service-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      /* Make each column stretch evenly */
+      .col-md-6.col-lg-6.col-xl-3 {
+        display: flex;
+        align-items: stretch;
+      }
+
+      /* CSS to make the image a background */
+      .header-carousel-item {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+      }
+
+      /* Use data attributes instead of nth-child for reliable targeting with Owl Carousel */
+      .header-carousel-item[data-bg="slide1"] {
+        background-image: url("img/bannerTwo.png");
+      }
+
+      .header-carousel-item[data-bg="slide2"] {
+        background-image: url("img/bannerOne1.png");
+      }
+
+      /* Optional: Add an overlay for better text readability */
+      .header-carousel-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        z-index: 1;
+      }
+
+      .header-carousel-item .carousel-caption {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding-bottom: 0;
+        text-align: left;
+      }
+
+      /* Footer logo styling */
+      .footer-logo {
+        max-height: 80px;
+        width: auto;
+        object-fit: contain;
+        filter: brightness(0) invert(1); /* Makes logo white for dark background */
+        margin-bottom: 20px;
+      }
+
+      /* Custom CCTV Cursor for all interactive elements */
+    .btn,
+    a,
+    button,
+    .nav-item,
+    .feature-item,
+    .service-item,
+    .accordion-button {
+      /* Change 'cctv-pointer.png' to the actual filename of your icon.
+         The 'pointer' fallback is crucial in case the image fails to load.
+         
+         If you need to set the precise clickable point (hotspot), 
+         you can use coordinates:
+         cursor: url('img/cctv-pointer.png') 16 16, pointer !important; 
+         (16 16 for a 32x32 image to center the hotspot)
+      */
+      cursor: url('img\cctv-pointer.png'), pointer !important;
+    }
+
+    /* Make all service cards same height */
+    .service-item {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+      /* Remove filter if your logo is already white/light colored */
+      @media (max-width: 767.98px) {
+        .footer-logo {
+          max-height: 60px;
+        }
+      }
+
+      /* Adjust text alignment for smaller screens */
+      @media (max-width: 767.98px) {
+        .header-carousel-item {
+          min-height: 450px; /* Reduced height for mobile */
+        }
+
+        .header-carousel-item .carousel-caption .text-start {
+          text-align: center !important;
+        }
+
+        .header-carousel-item .carousel-caption .d-flex.justify-content-start {
+          justify-content: center !important;
+        }
+
+        .header-carousel-item .display-1 {
+          font-size: 2.5rem; /* Smaller heading on mobile */
+        }
+      }
+
+      /* Responsive adjustments for tablets */
+      @media (max-width: 991.98px) {
+        .header-carousel-item {
+          min-height: 500px;
+        }
+
+        .header-carousel-item .display-1 {
+          font-size: 3rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="spinner-border text-primary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+      >
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div
+      class="container-fluid topbar px-0 px-lg-4 bg-light py-2 d-none d-lg-block"
+    >
+      <div class="container">
+        <div class="row gx-0 align-items-center">
+          <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+            <div class="d-flex flex-wrap">
+              <div class="border-end border-primary pe-3">
+                <a href="#" class="text-muted small"
+                  ><i class="fas fa-map-marker-alt text-primary me-2"></i
+                  >Manama, Bahrain</a
+                >
+              </div>
+              <div class="ps-3">
+                <a href="mailto:Sales@infologicits.com" class="text-muted small"
+                  ><i class="fas fa-envelope text-primary me-2"></i
+                  >Sales@infologicits.com</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 text-center text-lg-end">
+            <div class="d-flex justify-content-end">
+              <div class="d-flex border-primary pe-3">
+                <a class="btn p-0 text-primary me-3" href="#"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a class="btn p-0 text-primary me-3" href="#"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a class="btn p-0 text-primary me-3" href="#"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a class="btn p-0 text-primary me-0" href="#"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a href="index.html" class="navbar-brand p-0">
+            <img
+              src="img/logo.png"
+              alt="Infologic ITS Logo"
+              style="max-height: 80px; width: auto"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+          >
+            <span class="fa fa-bars"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-0 mx-lg-auto">
+              <a href="index.html" class="nav-item nav-link active">Home</a>
+              <a href="about.html" class="nav-item nav-link">About</a>
+              <a href="service.html" class="nav-item nav-link">Services</a>
+              <a href="contact.html" class="nav-item nav-link">Contact</a>
+              <div class="nav-btn px-3">
+                <a
+                  href="contact.html"
+                  class="btn btn-primary rounded-pill py-2 px-4 ms-3 flex-shrink-0"
+                  >Get a Quote</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="d-none d-xl-flex flex-shrink-0 ps-4">
+            <a
+              href="tel:+97336388919"
+              class="btn btn-light btn-lg-square rounded-circle position-relative wow tada"
+              data-wow-delay=".9s"
+            >
+              <i class="fa fa-phone-alt fa-2x"></i>
+              <div class="position-absolute" style="top: 7px; right: 12px">
+                <span><i class="fa fa-comment-dots text-secondary"></i></span>
+              </div>
+            </a>
+            <div class="d-flex flex-column ms-3">
+              <span>Call Our Experts</span>
+              <a href="tel:+97336388919"
+                ><span class="text-dark">+973 36388919</span></a
+              >
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Modal Search Start -->
+    <div
+      class="modal fade"
+      id="searchModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content rounded-0">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Search by keyword
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body d-flex align-items-center bg-primary">
+            <div class="input-group w-75 mx-auto d-flex">
+              <input
+                type="search"
+                class="form-control p-3"
+                placeholder="keywords"
+                aria-describedby="search-icon-1"
+              />
+              <span
+                id="search-icon-1"
+                class="btn bg-light border nput-group-text p-3"
+                ><i class="fa fa-search"></i
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Search End -->
+
+    <!-- Carousel Start -->
+    <div class="header-carousel owl-carousel">
+      <!-- Slide 1 -->
+      <div class="header-carousel-item bg-primary" data-bg="slide1">
+        <div
+          class="carousel-caption d-flex align-items-center"
+          style="position: static"
+        >
+          <div class="container">
+            <div
+              class="row g-4 align-items-center justify-content-start"
+              style="min-height: 500px"
+            >
+              <div class="col-lg-7 animated fadeInLeft">
+                <div class="text-start text-white">
+                  <h4 class="text-white text-uppercase fw-bold mb-4">
+                    Welcome To Infologic ITS
+                  </h4>
+                  <h1 class="display-1 text-white mb-4">
+                    Empowering Businesses Through Smart IT Innovation
+                  </h1>
+                  <p class="mb-5 fs-5">
+                    Your trusted partner in IT Infrastructure, Security Systems,
+                    and Zoho Cloud Solutions — delivering reliable technology
+                    that helps your business grow.
+                  </p>
+                  <div class="d-flex justify-content-start flex-shrink-0 mb-4">
+                    <a
+                      href="about.html"
+                      class="btn btn-light rounded-pill py-3 px-4 px-md-5 ms-2"
+                    >
+                      Learn More
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="header-carousel-item bg-primary" data-bg="slide2">
+        <div
+          class="carousel-caption d-flex align-items-center"
+          style="position: static"
+        >
+          <div class="container">
+            <div
+              class="row gy-4 gy-lg-0 gx-0 gx-lg-5 align-items-center justify-content-start"
+              style="min-height: 500px"
+            >
+              <div class="col-lg-7 animated fadeInRight">
+                <div class="text-start text-white">
+                  <h4 class="text-white text-uppercase fw-bold mb-4">
+                    Innovation & Excellence
+                  </h4>
+                  <h1 class="display-1 text-white mb-4">
+                    Complete IT Solutions for Modern Business
+                  </h1>
+                  <p class="mb-5 fs-5">
+                    From hardware and networking to ERP and Zoho implementation
+                    — we help businesses build secure, scalable, and smart IT
+                    environments.
+                  </p>
+                  <div class="d-flex justify-content-start flex-shrink-0 mb-4">
+                    <a
+                      href="service.html"
+                      class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2"
+                    >
+                      Our Services
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel End -->
+
+    <!-- Feature Start -->
+
+    <div class="container-fluid feature bg-light py-5">
+      <div class="container py-5">
+        <div
+          class="text-center mx-auto pb-5 wow fadeInUp"
+          data-wow-delay="0.2s"
+          style="max-width: 800px"
+        >
+          <h4 class="text-primary">Why Choose Infologic ITS</h4>
+          <h1 class="display-4 mb-4">Your All-in-One IT Partner</h1>
+          <p class="mb-0">
+            We combine innovation, expertise, and a customer-first approach to
+            deliver reliable IT and cloud solutions that empower your business
+            to grow securely and efficiently.
+          </p>
+        </div>
+        <div class="row g-4">
+          <!-- All-in-One IT Partner -->
+          <div
+            class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.2s"
+          >
+            <div class="feature-item p-4 pt-0">
+              <div class="feature-icon p-4 mb-4">
+                <i class="fas fa-network-wired fa-3x"></i>
+              </div>
+              <h4 class="mb-4">All-in-One IT Partner</h4>
+              <p class="mb-4">
+                Hardware, networking, ERP, Zoho, and security solutions — all
+                under one roof for seamless integration and performance.
+              </p>
+              <a
+                class="btn btn-primary rounded-pill py-2 px-4"
+                href="service.html"
+              >
+                Learn More
+              </a>
+            </div>
+          </div>
+
+          <!-- Proven Expertise -->
+          <div
+            class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.4s"
+          >
+            <div class="feature-item p-4 pt-0">
+              <div class="feature-icon p-4 mb-4">
+                <i class="fas fa-user-tie fa-3x"></i>
+              </div>
+              <h4 class="mb-4">Proven Expertise</h4>
+              <p class="mb-4">
+                Certified professionals with deep technical knowledge and years
+                of experience in delivering end-to-end IT solutions.
+              </p>
+              <a
+                class="btn btn-primary rounded-pill py-2 px-4"
+                href="about.html"
+              >
+                Learn More
+              </a>
+            </div>
+          </div>
+
+          <!-- Customized Solutions -->
+          <div
+            class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.6s"
+          >
+            <div class="feature-item p-4 pt-0">
+              <div class="feature-icon p-4 mb-4">
+                <i class="fas fa-layer-group fa-3x"></i>
+              </div>
+              <h4 class="mb-4">Customized Solutions</h4>
+              <p class="mb-4">
+                Tailored IT strategies and systems designed around your business
+                goals, scalability needs, and budget requirements.
+              </p>
+              <a
+                class="btn btn-primary rounded-pill py-2 px-4"
+                href="service.html"
+              >
+                Learn More
+              </a>
+            </div>
+          </div>
+
+          <!-- Dedicated Support -->
+          <div
+            class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.8s"
+          >
+            <div class="feature-item p-4 pt-0">
+              <div class="feature-icon p-4 mb-4">
+                <i class="fas fa-headset fa-3x"></i>
+              </div>
+              <h4 class="mb-4">Dedicated Support</h4>
+              <p class="mb-4">
+                24×7 after-sales service, AMC packages, and remote assistance —
+                ensuring your systems stay online and optimized.
+              </p>
+              <a
+                class="btn btn-primary rounded-pill py-2 px-4"
+                href="contact.html"
+              >
+                Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature End -->
+
+    <!-- About Infologic ITS Start -->
+    <div class="container-fluid bg-light about pb-5">
+      <div class="container pb-5">
+        <div class="row g-5">
+          <!-- About Text -->
+          <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+            <div class="about-item-content bg-white rounded p-5 h-100">
+              <h4 class="text-primary">About Infologic ITS</h4>
+              <h1 class="display-4 mb-4">
+                Integrated IT Solutions Provider in Bahrain
+              </h1>
+              <p>
+                Infologic ITS is an integrated IT solutions provider offering
+                innovative and secure technology for modern businesses. From
+                infrastructure to automation, we help organizations achieve
+                operational excellence through reliable hardware, networking,
+                ERP, and Zoho cloud solutions.
+              </p>
+              <p>
+                Our vision is to be the leading IT solutions and Zoho service
+                provider in the Gulf region — delivering value through
+                technology, innovation, and partnership.
+              </p>
+              <p class="text-dark">
+                <i class="fa fa-check text-primary me-3"></i>Smart IT
+                infrastructure and automation
+              </p>
+              <p class="text-dark">
+                <i class="fa fa-check text-primary me-3"></i>Reliable ERP and
+                Zoho cloud solutions
+              </p>
+              <p class="text-dark mb-4">
+                <i class="fa fa-check text-primary me-3"></i>Driven by
+                integrity, innovation, and excellence
+              </p>
+              <a
+                class="btn btn-primary rounded-pill py-3 px-5"
+                href="about.html"
+              >
+                More Information
+              </a>
+            </div>
+          </div>
+
+          <!-- About Image & Counters -->
+          <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
+            <div class="bg-white rounded p-5 h-100">
+              <div class="row g-4 justify-content-center">
+                <div class="col-12">
+                  <div class="rounded bg-light">
+                    <img
+                      src="img\aboutHome.png"
+                      class="img-fluid rounded w-100"
+                      alt="Infologic ITS"
+                    />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="counter-item bg-light rounded p-3 h-100">
+                    <div class="counter-counting">
+                      <span
+                        class="text-primary fs-2 fw-bold"
+                        data-toggle="counter-up"
+                        >500</span
+                      >
+                      <span class="h1 fw-bold text-primary">+</span>
+                    </div>
+                    <h4 class="mb-0 text-dark">Projects Completed</h4>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="counter-item bg-light rounded p-3 h-100">
+                    <div class="counter-counting">
+                      <span
+                        class="text-primary fs-2 fw-bold"
+                        data-toggle="counter-up"
+                        >15</span
+                      >
+                      <span class="h1 fw-bold text-primary">+</span>
+                    </div>
+                    <h4 class="mb-0 text-dark">Years Experience</h4>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="counter-item bg-light rounded p-3 h-100">
+                    <div class="counter-counting">
+                      <span
+                        class="text-primary fs-2 fw-bold"
+                        data-toggle="counter-up"
+                        >250</span
+                      >
+                      <span class="h1 fw-bold text-primary">+</span>
+                    </div>
+                    <h4 class="mb-0 text-dark">Happy Clients</h4>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="counter-item bg-light rounded p-3 h-100">
+                    <div class="counter-counting">
+                      <span
+                        class="text-primary fs-2 fw-bold"
+                        data-toggle="counter-up"
+                        >50</span
+                      >
+                      <span class="h1 fw-bold text-primary">+</span>
+                    </div>
+                    <h4 class="mb-0 text-dark">Expert Team</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- About Infologic ITS End -->
+
+    <!-- Service Start -->
+    <div class="container-fluid service py-5">
+      <div class="container py-5">
+        <div
+          class="text-center mx-auto pb-5 wow fadeInUp"
+          data-wow-delay="0.2s"
+          style="max-width: 800px"
+        >
+          <h4 class="text-primary">Our Services</h4>
+          <h1 class="display-4 mb-4">
+            Comprehensive IT Solutions for Your Business
+          </h1>
+          <p class="mb-0">
+            From hardware and networking to ERP, Zoho, and security systems — we
+            provide end-to-end IT solutions that power your business with
+            reliability and innovation.
+          </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <!-- Hardware Solutions -->
+          <div
+            class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.2s"
+          >
+            <div class="service-item">
+              <div class="service-img">
+                <img
+                  src="img/HardwareSolutions.png"
+                  class="img-fluid rounded-top w-100"
+                  alt="Hardware Solutions"
+                />
+                <div class="service-icon p-3">
+                  <i class="fas fa-server fa-2x"></i>
+                </div>
+              </div>
+              <div class="service-content p-4">
+                <div class="service-content-inner">
+                  <a href="service.html" class="d-inline-block h4 mb-4"
+                    >Hardware Solutions</a
+                  >
+                  <p class="mb-4">
+                    Full range of IT hardware and peripherals — servers,
+                    desktops, laptops, storage devices, and more — ensuring
+                    reliable performance and maintenance.
+                  </p>
+                  <a
+                    class="btn btn-primary rounded-pill py-2 px-4"
+                    href="service.html"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- System Integration -->
+          <div
+            class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.4s"
+          >
+            <div class="service-item">
+              <div class="service-img">
+                <img
+                  src="img/SystemIntegration.png"
+                  class="img-fluid rounded-top w-100"
+                  alt="System Integration"
+                />
+                <div class="service-icon p-3">
+                  <i class="fas fa-network-wired fa-2x"></i>
+                </div>
+              </div>
+              <div class="service-content p-4">
+                <div class="service-content-inner">
+                  <a href="service.html" class="d-inline-block h4 mb-4"
+                    >System Integration</a
+                  >
+                  <p class="mb-4">
+                    End-to-end integration of your IT infrastructure —
+                    connecting servers, applications, and networks into one
+                    unified, high-performance ecosystem.
+                  </p>
+                  <a
+                    class="btn btn-primary rounded-pill py-2 px-4"
+                    href="service.html"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Structured Cabling Solutions -->
+          <div
+            class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.6s"
+          >
+            <div class="service-item">
+              <div class="service-img">
+                <img
+                  src="img/StructuredCablingSolutions.png"
+                  class="img-fluid rounded-top w-100"
+                  alt="Structured Cabling Solutions"
+                />
+                <div class="service-icon p-3">
+                  <i class="fas fa-project-diagram fa-2x"></i>
+                </div>
+              </div>
+              <div class="service-content p-4">
+                <div class="service-content-inner">
+                  <a href="service.html" class="d-inline-block h4 mb-4"
+                    >Structured Cabling Solutions</a
+                  >
+                  <p class="mb-4">
+                    Certified Cat6, Cat7, and fiber optic cabling solutions —
+                    from design to installation — ensuring high-speed, scalable
+                    data and voice networks.
+                  </p>
+                  <a
+                    class="btn btn-primary rounded-pill py-2 px-4"
+                    href="service.html"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Zoho Products & Cloud Solutions -->
+          <div
+            class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+            data-wow-delay="0.8s"
+          >
+            <div class="service-item">
+              <div class="service-img">
+                <img
+                  src="img/ZohoProducts&CloudSolutions.png"
+                  class="img-fluid rounded-top w-100"
+                  alt="Zoho Products & Cloud Solutions"
+                />
+                <div class="service-icon p-3">
+                  <i class="fas fa-cloud fa-2x"></i>
+                </div>
+              </div>
+              <div class="service-content p-4">
+                <div class="service-content-inner">
+                  <a href="service.html" class="d-inline-block h4 mb-4"
+                    >Zoho Products & Cloud Solutions</a
+                  >
+                  <p class="mb-4">
+                    Authorized Zoho Partner — providing setup, customization,
+                    and support for Zoho Books, CRM, Inventory, People, and Zoho
+                    One Suite.
+                  </p>
+                  <a
+                    class="btn btn-primary rounded-pill py-2 px-4"
+                    href="service.html"
+                    >Read More</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- More Services Button -->
+          <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+            <a
+              class="btn btn-primary rounded-pill py-3 px-5"
+              href="service.html"
+              >More Services</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Service End -->
+
+    <!-- FAQs Start -->
+    <div class="container-fluid faq-section bg-light py-5">
+      <div class="container py-5">
+        <div class="row g-5 align-items-center">
+          <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+            <div class="h-100">
+              <div class="mb-5">
+                <h4 class="text-primary">Frequently Asked Questions</h4>
+                <h1 class="display-4 mb-0">
+                  Common Questions About Our Services
+                </h1>
+              </div>
+
+              <div class="accordion" id="accordionExample">
+                <!-- FAQ 1 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button
+                      class="accordion-button border-0"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                      Q: What services does Infologic ITS offer?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseOne"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body rounded">
+                      A: Infologic ITS offers a complete range of IT services
+                      including hardware supply, system integration, structured
+                      cabling, ERP implementation, Zoho cloud solutions, CCTV
+                      and security systems, and IT consultancy. We deliver
+                      customized, reliable, and scalable technology solutions
+                      designed to meet the diverse needs of businesses across
+                      Bahrain and beyond.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      Q: Is Infologic ITS an authorized Zoho partner?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseTwo"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      A: Yes. Infologic ITS is an authorized Zoho Partner in
+                      Bahrain. We provide complete implementation,
+                      customization, and support for Zoho products such as Zoho
+                      Books, Zoho CRM, Zoho Inventory, Zoho People, and Zoho One
+                      Suite. Our team ensures smooth deployment, user training,
+                      and post-implementation support for all Zoho business
+                      applications.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                    >
+                      Q: Does Infologic ITS provide maintenance and support?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseThree"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      A: Yes, we provide 24×7 after-sales support, Annual
+                      Maintenance Contracts (AMC), and remote assistance. Our
+                      expert support team ensures smooth and continuous
+                      operation of your IT infrastructure with preventive
+                      maintenance, troubleshooting, and quick response to
+                      technical issues.
+                    </div>
+                  </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingFour">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseFour"
+                      aria-expanded="false"
+                      aria-controls="collapseFour"
+                    >
+                      Q: What makes Infologic ITS different from other IT
+                      providers?
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseFour"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="headingFour"
+                    data-bs-parent="#accordionExample"
+                  >
+                    <div class="accordion-body">
+                      A: Our strength lies in our ability to provide all-in-one
+                      IT solutions under one roof. From hardware and networking
+                      to ERP and Zoho implementation, we deliver integrated
+                      services supported by certified professionals with proven
+                      expertise and a customer-first approach. We focus on
+                      long-term partnerships built on trust, reliability, and
+                      performance.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
+            <img
+              src="img/carousel-2.png"
+              class="img-fluid w-100 rounded"
+              alt="Infologic ITS"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FAQs End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-xl-12">
+            <div class="mb-5">
+              <div class="row g-4">
+                <!-- Company Info -->
+                <div class="col-md-12 col-lg-5 col-xl-5">
+                  <div class="footer-item pe-lg-4">
+                    <a href="index.html" class="p-0 d-inline-block mb-3">
+                      <img
+                        src="img/logo.png"
+                        alt="Infologic ITS Logo"
+                        class="footer-logo mb-0"
+                      />
+                    </a>
+                    <p class="text-white mb-4" style="max-width: 420px">
+                      Your trusted partner in IT Infrastructure, Security
+                      Systems, and Zoho Cloud Solutions — delivering reliable
+                      technology that helps your business grow.
+                    </p>
+                    <div class="footer-btn d-flex">
+                      <a class="btn btn-md-square rounded-circle me-3" href="#">
+                        <i class="fab fa-facebook-f"></i>
+                      </a>
+                      <a class="btn btn-md-square rounded-circle me-3" href="#">
+                        <i class="fab fa-twitter"></i>
+                      </a>
+                      <a class="btn btn-md-square rounded-circle me-3" href="#">
+                        <i class="fab fa-linkedin-in"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-6 col-lg-3 col-xl-3">
+                  <div class="footer-item">
+                    <h4 class="text-white mb-4">Quick Links</h4>
+                    <a href="about.html"
+                      ><i class="fas fa-angle-right me-2"></i> About Us</a
+                    >
+                    <a href="service.html"
+                      ><i class="fas fa-angle-right me-2"></i> Services</a
+                    >
+                    <a href="contact.html"
+                      ><i class="fas fa-angle-right me-2"></i> Contact</a
+                    >
+                  </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-md-6 col-lg-4 col-xl-4">
+                  <div class="footer-item">
+                    <h4 class="text-white mb-4">Contact Information</h4>
+                    <div class="d-flex mb-3">
+                      <div
+                        class="btn-md-square bg-primary text-white rounded me-3"
+                      >
+                        <i class="fas fa-map-marker-alt"></i>
+                      </div>
+                      <div>
+                        <h6 class="text-white mb-1">Address</h6>
+                        <p class="mb-0">Manama, Kingdom of Bahrain</p>
+                      </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                      <div
+                        class="btn-md-square bg-primary text-white rounded me-3"
+                      >
+                        <i class="fas fa-envelope"></i>
+                      </div>
+                      <div>
+                        <h6 class="text-white mb-1">Mail Us</h6>
+                        <p class="mb-0">Sales@infologicits.com</p>
+                      </div>
+                    </div>
+                    <div class="d-flex">
+                      <div
+                        class="btn-md-square bg-primary text-white rounded me-3"
+                      >
+                        <i class="fa fa-phone-alt"></i>
+                      </div>
+                      <div>
+                        <h6 class="text-white mb-1">Telephone</h6>
+                        <p class="mb-0">+973 36388919</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-6 text-center text-md-end mb-md-0">
+            <span class="text-body">
+              <a href="#" class="border-bottom text-white">
+                <i class="fas fa-copyright text-light me-2"></i>Infologic ITS
+              </a>
+              , All rights reserved.
+            </span>
+          </div>
+          <div class="col-md-6 text-center text-md-start text-body">
+            Designed By
+            <a class="border-bottom text-white" href="https://htmlcodex.com"
+              >HTML Codex</a
+            >
+            | Customized for Infologic ITS
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a
+      href="#"
+      class="btn btn-primary btn-lg-square rounded-circle back-to-top"
+    >
+      <i class="fa fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
