@@ -15,10 +15,14 @@
       name="description"
     />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <!-- ✅ Favicon and App Icons -->
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/logo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo.png" />
+    <link rel="manifest" href="img/site.webmanifest" />
 
-    <!-- Open Graph Meta Tags -->
+    <!-- Open Graph (for social sharing) -->
     <meta
       property="og:title"
       content="Infologic ITS - Complete IT Solutions in Bahrain"
@@ -29,10 +33,7 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://infologicits.com" />
-    <meta
-      property="og:image"
-      content="https://infologicits.com/img/og-image.jpg"
-    />
+    <meta property="og:image" content="https://infologicits.com/img/logo.png" />
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -43,6 +44,10 @@
     <meta
       name="twitter:description"
       content="Complete IT Infrastructure, ERP, Zoho & Security Solutions"
+    />
+    <meta
+      name="twitter:image"
+      content="https://infologicits.com/img/logo.png"
     />
 
     <!-- Google Web Fonts -->
@@ -82,7 +87,6 @@
         height: 100%;
       }
 
-      /* Equalize card height within each column */
       .service-content {
         flex-grow: 1;
         display: flex;
@@ -90,13 +94,12 @@
         justify-content: space-between;
       }
 
-      /* Make each column stretch evenly */
       .col-md-6.col-lg-6.col-xl-3 {
         display: flex;
         align-items: stretch;
       }
 
-      /* CSS to make the image a background */
+      /* Hero Banner Setup */
       .header-carousel-item {
         background-size: cover;
         background-position: center;
@@ -107,7 +110,6 @@
         align-items: center;
       }
 
-      /* Use data attributes instead of nth-child for reliable targeting with Owl Carousel */
       .header-carousel-item[data-bg="slide1"] {
         background-image: url("img/bannerTwo.png");
       }
@@ -116,7 +118,6 @@
         background-image: url("img/bannerOne1.png");
       }
 
-      /* Optional: Add an overlay for better text readability */
       .header-carousel-item::before {
         content: "";
         position: absolute;
@@ -124,7 +125,10 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        background: linear-gradient(
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.4)
+        ); /* Gradient overlay */
         z-index: 1;
       }
 
@@ -132,10 +136,6 @@
         position: relative;
         z-index: 2;
         width: 100%;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        padding-bottom: 0;
         text-align: left;
       }
 
@@ -144,68 +144,49 @@
         max-height: 80px;
         width: auto;
         object-fit: contain;
-        filter: brightness(0) invert(1); /* Makes logo white for dark background */
+        filter: brightness(0) invert(1);
         margin-bottom: 20px;
       }
 
-      /* Custom CCTV Cursor for all interactive elements */
-    .btn,
-    a,
-    button,
-    .nav-item,
-    .feature-item,
-    .service-item,
-    .accordion-button {
-      /* Change 'cctv-pointer.png' to the actual filename of your icon.
-         The 'pointer' fallback is crucial in case the image fails to load.
-         
-         If you need to set the precise clickable point (hotspot), 
-         you can use coordinates:
-         cursor: url('img/cctv-pointer.png') 16 16, pointer !important; 
-         (16 16 for a 32x32 image to center the hotspot)
-      */
-      cursor: url('img\cctv-pointer.png'), pointer !important;
-    }
+      .footer-item .btn.btn-md-square {
+        background-color: transparent !important;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .footer-item .btn.btn-md-square i {
+        color: #fff !important;
+      }
+      .footer-item .btn.btn-md-square:hover {
+        background-color: #0d6efd !important;
+        border-color: #0d6efd !important;
+      }
 
-    /* Make all service cards same height */
-    .service-item {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
+      /* CCTV Cursor */
+      .btn,
+      a,
+      button,
+      .nav-item,
+      .feature-item,
+      .service-item,
+      .accordion-button {
+        cursor: url("img/cctv-pointer.png"), pointer !important;
+      }
 
-      /* Remove filter if your logo is already white/light colored */
       @media (max-width: 767.98px) {
         .footer-logo {
           max-height: 60px;
         }
-      }
-
-      /* Adjust text alignment for smaller screens */
-      @media (max-width: 767.98px) {
         .header-carousel-item {
-          min-height: 450px; /* Reduced height for mobile */
+          min-height: 450px;
         }
-
-        .header-carousel-item .carousel-caption .text-start {
-          text-align: center !important;
-        }
-
-        .header-carousel-item .carousel-caption .d-flex.justify-content-start {
-          justify-content: center !important;
-        }
-
         .header-carousel-item .display-1 {
-          font-size: 2.5rem; /* Smaller heading on mobile */
+          font-size: 2.5rem;
         }
       }
 
-      /* Responsive adjustments for tablets */
       @media (max-width: 991.98px) {
         .header-carousel-item {
           min-height: 500px;
         }
-
         .header-carousel-item .display-1 {
           font-size: 3rem;
         }
@@ -214,7 +195,6 @@
   </head>
 
   <body>
-    <!-- Spinner Start -->
     <div
       id="spinner"
       class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
@@ -227,9 +207,6 @@
         <span class="sr-only">Loading...</span>
       </div>
     </div>
-    <!-- Spinner End -->
-
-    <!-- Topbar Start -->
     <div
       class="container-fluid topbar px-0 px-lg-4 bg-light py-2 d-none d-lg-block"
     >
@@ -254,27 +231,33 @@
           <div class="col-lg-4 text-center text-lg-end">
             <div class="d-flex justify-content-end">
               <div class="d-flex border-primary pe-3">
-                <a class="btn p-0 text-primary me-3" href="#"
-                  ><i class="fab fa-facebook-f"></i
-                ></a>
-                <a class="btn p-0 text-primary me-3" href="#"
-                  ><i class="fab fa-twitter"></i
-                ></a>
-                <a class="btn p-0 text-primary me-3" href="#"
-                  ><i class="fab fa-instagram"></i
-                ></a>
-                <a class="btn p-0 text-primary me-0" href="#"
-                  ><i class="fab fa-linkedin-in"></i
-                ></a>
+                <a class="btn p-0 text-primary me-3" href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="btn p-0 text-primary me-3" href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a class="btn p-0 text-primary me-3" href="#">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a class="btn p-0 text-primary me-3" href="#">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <!-- ✅ WhatsApp Icon -->
+                <a
+                  class="btn p-0 text-primary me-0"
+                  href="https://wa.me/97336388919"
+                  target="_blank"
+                  aria-label="Chat on WhatsApp"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Topbar End -->
-
-    <!-- Navbar & Hero Start -->
     <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -329,9 +312,6 @@
         </nav>
       </div>
     </div>
-    <!-- Navbar & Hero End -->
-
-    <!-- Modal Search Start -->
     <div
       class="modal fade"
       id="searchModal"
@@ -370,11 +350,7 @@
         </div>
       </div>
     </div>
-    <!-- Modal Search End -->
-
-    <!-- Carousel Start -->
     <div class="header-carousel owl-carousel">
-      <!-- Slide 1 -->
       <div class="header-carousel-item bg-primary" data-bg="slide1">
         <div
           class="carousel-caption d-flex align-items-center"
@@ -413,7 +389,6 @@
         </div>
       </div>
 
-      <!-- Slide 2 -->
       <div class="header-carousel-item bg-primary" data-bg="slide2">
         <div
           class="carousel-caption d-flex align-items-center"
@@ -453,10 +428,6 @@
       </div>
     </div>
 
-    <!-- Carousel End -->
-
-    <!-- Feature Start -->
-
     <div class="container-fluid feature bg-light py-5">
       <div class="container py-5">
         <div
@@ -473,7 +444,6 @@
           </p>
         </div>
         <div class="row g-4">
-          <!-- All-in-One IT Partner -->
           <div
             class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
             data-wow-delay="0.2s"
@@ -496,7 +466,6 @@
             </div>
           </div>
 
-          <!-- Proven Expertise -->
           <div
             class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
             data-wow-delay="0.4s"
@@ -519,7 +488,6 @@
             </div>
           </div>
 
-          <!-- Customized Solutions -->
           <div
             class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
             data-wow-delay="0.6s"
@@ -542,7 +510,6 @@
             </div>
           </div>
 
-          <!-- Dedicated Support -->
           <div
             class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
             data-wow-delay="0.8s"
@@ -568,13 +535,9 @@
       </div>
     </div>
 
-    <!-- Feature End -->
-
-    <!-- About Infologic ITS Start -->
     <div class="container-fluid bg-light about pb-5">
       <div class="container pb-5">
         <div class="row g-5">
-          <!-- About Text -->
           <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
             <div class="about-item-content bg-white rounded p-5 h-100">
               <h4 class="text-primary">About Infologic ITS</h4>
@@ -614,7 +577,6 @@
             </div>
           </div>
 
-          <!-- About Image & Counters -->
           <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
             <div class="bg-white rounded p-5 h-100">
               <div class="row g-4 justify-content-center">
@@ -685,9 +647,6 @@
         </div>
       </div>
     </div>
-    <!-- About Infologic ITS End -->
-
-    <!-- Service Start -->
     <div class="container-fluid service py-5">
       <div class="container py-5">
         <div
@@ -707,7 +666,6 @@
         </div>
 
         <div class="row g-4 justify-content-center">
-          <!-- Hardware Solutions -->
           <div
             class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
             data-wow-delay="0.2s"
@@ -743,7 +701,6 @@
             </div>
           </div>
 
-          <!-- System Integration -->
           <div
             class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
             data-wow-delay="0.4s"
@@ -779,7 +736,6 @@
             </div>
           </div>
 
-          <!-- Structured Cabling Solutions -->
           <div
             class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
             data-wow-delay="0.6s"
@@ -815,7 +771,6 @@
             </div>
           </div>
 
-          <!-- Zoho Products & Cloud Solutions -->
           <div
             class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
             data-wow-delay="0.8s"
@@ -851,7 +806,6 @@
             </div>
           </div>
 
-          <!-- More Services Button -->
           <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
             <a
               class="btn btn-primary rounded-pill py-3 px-5"
@@ -862,9 +816,6 @@
         </div>
       </div>
     </div>
-    <!-- Service End -->
-
-    <!-- FAQs Start -->
     <div class="container-fluid faq-section bg-light py-5">
       <div class="container py-5">
         <div class="row g-5 align-items-center">
@@ -878,7 +829,6 @@
               </div>
 
               <div class="accordion" id="accordionExample">
-                <!-- FAQ 1 -->
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingOne">
                     <button
@@ -910,7 +860,6 @@
                   </div>
                 </div>
 
-                <!-- FAQ 2 -->
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingTwo">
                     <button
@@ -942,7 +891,6 @@
                   </div>
                 </div>
 
-                <!-- FAQ 3 -->
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingThree">
                     <button
@@ -973,7 +921,6 @@
                   </div>
                 </div>
 
-                <!-- FAQ 4 -->
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="headingFour">
                     <button
@@ -1019,95 +966,153 @@
         </div>
       </div>
     </div>
-    <!-- FAQs End -->
-
-    <!-- Footer Start -->
     <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
       <div class="container py-5">
         <div class="row g-5">
           <div class="col-xl-12">
             <div class="mb-5">
               <div class="row g-4">
-                <!-- Company Info -->
-                <div class="col-md-12 col-lg-5 col-xl-5">
-                  <div class="footer-item pe-lg-4">
-                    <a href="index.html" class="p-0 d-inline-block mb-3">
-                      <img
-                        src="img/logo.png"
-                        alt="Infologic ITS Logo"
-                        class="footer-logo mb-0"
-                      />
-                    </a>
-                    <p class="text-white mb-4" style="max-width: 420px">
+                <div class="col-md-12 col-lg-5 col-xl-4">
+                  <div class="footer-item">
+                    <img
+                      src="img/logo.png"
+                      alt="Infologic ITS Logo"
+                      class="footer-logo"
+                    />
+                    <p class="text-white mb-4">
                       Your trusted partner in IT Infrastructure, Security
                       Systems, and Zoho Cloud Solutions — delivering reliable
-                      technology that helps your business grow.
+                      technology that helps your business grow. Based in
+                      Bahrain.
                     </p>
-                    <div class="footer-btn d-flex">
-                      <a class="btn btn-md-square rounded-circle me-3" href="#">
+                    <div class="d-flex">
+                      <a
+                        class="btn btn-primary btn-md-square rounded-circle me-3"
+                        href="#"
+                      >
                         <i class="fab fa-facebook-f"></i>
                       </a>
-                      <a class="btn btn-md-square rounded-circle me-3" href="#">
+                      <a
+                        class="btn btn-primary btn-md-square rounded-circle me-3"
+                        href="#"
+                      >
                         <i class="fab fa-twitter"></i>
                       </a>
-                      <a class="btn btn-md-square rounded-circle me-3" href="#">
+                      <a
+                        class="btn btn-primary btn-md-square rounded-circle me-3"
+                        href="#"
+                      >
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                      <a
+                        class="btn btn-primary btn-md-square rounded-circle me-3"
+                        href="#"
+                      >
                         <i class="fab fa-linkedin-in"></i>
+                      </a>
+                      <!-- ✅ WhatsApp Icon Added -->
+                      <a
+                        class="btn btn-primary btn-md-square rounded-circle me-3"
+                        href="https://wa.me/97336388919"
+                        target="_blank"
+                        aria-label="Chat on WhatsApp"
+                      >
+                        <i class="fab fa-whatsapp"></i>
                       </a>
                     </div>
                   </div>
                 </div>
 
-                <!-- Quick Links -->
-                <div class="col-md-6 col-lg-3 col-xl-3">
-                  <div class="footer-item">
-                    <h4 class="text-white mb-4">Quick Links</h4>
-                    <a href="about.html"
-                      ><i class="fas fa-angle-right me-2"></i> About Us</a
-                    >
-                    <a href="service.html"
-                      ><i class="fas fa-angle-right me-2"></i> Services</a
-                    >
-                    <a href="contact.html"
-                      ><i class="fas fa-angle-right me-2"></i> Contact</a
-                    >
-                  </div>
-                </div>
+                <div class="col-md-12 col-lg-7 col-xl-8">
+                  <div class="row g-4">
+                    <div class="col-md-6 col-lg-6 col-xl-6">
+                      <div class="footer-item">
+                        <h4 class="text-white mb-4">Office Details</h4>
+                        <div class="d-flex mb-3">
+                          <div
+                            class="btn-md-square bg-primary text-white rounded me-3"
+                          >
+                            <i class="fas fa-map-marker-alt"></i>
+                          </div>
+                          <div>
+                            <h6 class="text-white mb-1">Address</h6>
+                            <p class="mb-0">Manama, Kingdom of Bahrain</p>
+                          </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                          <div
+                            class="btn-md-square bg-primary text-white rounded me-3"
+                          >
+                            <i class="fas fa-envelope"></i>
+                          </div>
+                          <div>
+                            <h6 class="text-white mb-1">Mail Us</h6>
+                            <p class="mb-0">Sales@infologicits.com</p>
+                          </div>
+                        </div>
+                        <div class="d-flex">
+                          <div
+                            class="btn-md-square bg-primary text-white rounded me-3"
+                          >
+                            <i class="fa fa-phone-alt"></i>
+                          </div>
+                          <div>
+                            <h6 class="text-white mb-1">Telephone</h6>
+                            <p class="mb-0">+973 36388919</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
-                <!-- Contact Info -->
-                <div class="col-md-6 col-lg-4 col-xl-4">
-                  <div class="footer-item">
-                    <h4 class="text-white mb-4">Contact Information</h4>
-                    <div class="d-flex mb-3">
-                      <div
-                        class="btn-md-square bg-primary text-white rounded me-3"
-                      >
-                        <i class="fas fa-map-marker-alt"></i>
-                      </div>
-                      <div>
-                        <h6 class="text-white mb-1">Address</h6>
-                        <p class="mb-0">Manama, Kingdom of Bahrain</p>
-                      </div>
-                    </div>
-                    <div class="d-flex mb-3">
-                      <div
-                        class="btn-md-square bg-primary text-white rounded me-3"
-                      >
-                        <i class="fas fa-envelope"></i>
-                      </div>
-                      <div>
-                        <h6 class="text-white mb-1">Mail Us</h6>
-                        <p class="mb-0">Sales@infologicits.com</p>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                      <div class="footer-item">
+                        <h4 class="text-white mb-4">Quick Links</h4>
+                        <div class="d-flex flex-column align-items-start">
+                          <a class="text-body mb-3" href="index.html"
+                            ><i class="fa fa-check text-primary me-2"></i
+                            >Home</a
+                          >
+                          <a class="text-body mb-3" href="about.html"
+                            ><i class="fa fa-check text-primary me-2"></i>About
+                            Us</a
+                          >
+                          <a class="text-body mb-3" href="service.html"
+                            ><i class="fa fa-check text-primary me-2"></i
+                            >Services</a
+                          >
+                          <a class="text-body mb-3" href="contact.html"
+                            ><i class="fa fa-check text-primary me-2"></i
+                            >Contact</a
+                          >
+                        </div>
                       </div>
                     </div>
-                    <div class="d-flex">
-                      <div
-                        class="btn-md-square bg-primary text-white rounded me-3"
-                      >
-                        <i class="fa fa-phone-alt"></i>
-                      </div>
-                      <div>
-                        <h6 class="text-white mb-1">Telephone</h6>
-                        <p class="mb-0">+973 36388919</p>
+
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                      <div class="footer-item">
+                        <h4 class="text-white mb-4">Our Services</h4>
+                        <div class="d-flex flex-column align-items-start">
+                          <a class="text-body mb-3" href="service.html"
+                            ><i class="fa fa-check text-primary me-2"></i
+                            >Hardware Solutions</a
+                          >
+                          <a class="text-body mb-3" href="service.html"
+                            ><i class="fa fa-check text-primary me-2"></i>System
+                            Integration</a
+                          >
+                          <a class="text-body mb-3" href="service.html"
+                            ><i class="fa fa-check text-primary me-2"></i>ERP
+                            Solutions</a
+                          >
+                          <a class="text-body mb-3" href="service.html"
+                            ><i class="fa fa-check text-primary me-2"></i>Zoho
+                            Cloud Solutions</a
+                          >
+                          <a class="text-body mb-3" href="service.html"
+                            ><i class="fa fa-check text-primary me-2"></i
+                            >Security Systems</a
+                          >
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1118,9 +1123,6 @@
         </div>
       </div>
     </div>
-    <!-- Footer End -->
-
-    <!-- Copyright Start -->
     <div class="container-fluid copyright py-4">
       <div class="container">
         <div class="row g-4 align-items-center">
@@ -1134,17 +1136,13 @@
           </div>
           <div class="col-md-6 text-center text-md-start text-body">
             Designed By
-            <a class="border-bottom text-white" href="https://htmlcodex.com"
-              >HTML Codex</a
+            <a class="border-bottom text-white" target="_blank" href="https://asmbahrain.com/"
+              >A&S Management</a
             >
-            | Customized for Infologic ITS
           </div>
         </div>
       </div>
     </div>
-    <!-- Copyright End -->
-
-    <!-- Back to Top -->
     <a
       href="#"
       class="btn btn-primary btn-lg-square rounded-circle back-to-top"
@@ -1152,7 +1150,6 @@
       <i class="fa fa-arrow-up"></i>
     </a>
 
-    <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
@@ -1162,7 +1159,6 @@
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
   </body>
 </html>

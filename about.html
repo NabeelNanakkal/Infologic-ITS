@@ -14,7 +14,11 @@
       content="Infologic ITS empowers businesses through smart IT, security, and ERP innovation. We provide hardware, system integration, structured cabling, ERP, Zoho cloud, and CCTV solutions. Authorized Zoho Partner in Bahrain with 24×7 support."
     />
 
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/logo.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo.png" />
+    <link rel="manifest" href="img/site.webmanifest" />
 
     <meta
       property="og:title"
@@ -26,10 +30,7 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://infologicits.com" />
-    <meta
-      property="og:image"
-      content="https://infologicits.com/img/og-image.jpg"
-    />
+    <meta property="og:image" content="https://infologicits.com/img/logo.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta
@@ -42,7 +43,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://infologicits.com/img/og-image.jpg"
+      content="https://infologicits.com/img/logo.png"
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -66,33 +67,26 @@
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
 
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-
     <link href="css/style.css" rel="stylesheet" />
 
     <style>
-      /* Define variables for consistency */
       :root {
-        --bs-primary: #007bff; /* Retaining the original primary blue */
-        --bs-dark-accent: #1a233a; /* Darker, modern background for contrast */
+        --bs-primary: #007bff;
+        --bs-dark-accent: #1a233a;
         --bs-light-gray: #f0f2f5;
         --card-radius: 1.5rem;
       }
 
-      /* --- GLOBAL FUTURISTIC STYLES --- */
-      /* Header/Breadcrumb background */
+      /* --- GLOBAL STYLES --- */
       .bg-breadcrumb {
-        background: var(--bs-dark-accent);
         background-size: cover;
         position: relative;
       }
       .bg-breadcrumb::before {
         content: "";
         position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: rgba(0, 0, 0, 0.4);
+        inset: 0;
+        /* background: rgba(0, 0, 0, 0.4); */
         z-index: 1;
       }
       .bg-breadcrumb > * {
@@ -103,114 +97,162 @@
         color: #fff;
       }
 
-      /* Section background */
-      .about-section-bg {
-        background-color: var(--bs-light-gray);
-        padding-top: 5rem;
-        padding-bottom: 5rem;
+      /* ABOUT SECTION */
+      /* Applying height and display flex to the row for equal height columns */
+      .about-equal-height-row {
+          display: flex;
+          align-items: stretch; /* Stretches children to the height of the tallest item */
       }
-
-      /* Language Switch Button Styling */
-      .lang-switcher .dropdown-toggle {
-        font-weight: 600;
-        padding: 0.5rem 1rem;
-        border-radius: 0.75rem;
-        transition: all 0.3s ease;
-      }
-      .lang-switcher:hover .dropdown-toggle {
-        color: var(--bs-primary) !important;
-      }
-
-      /* --- ABOUT SECTION ENHANCEMENTS --- */
-      /* Content Box: Floating/Modern Card Effect */
-      .about-item-content,
-      .about-image-counter-box {
-        border-radius: var(--card-radius) !important;
+      
+      .about-item-content {
+        border-radius: var(--card-radius);
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
-          box-shadow 0.4s ease;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        height: 100%; /* Must be 100% to fill the column */
+      }
+      .about-item-content:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+      }
+      
+      /* New style for the main image wrapper to match the style of the content card */
+      .about-image-column {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          /* Removed justify-content: space-between; to allow the image to grow */
+      }
+      .about-main-image-wrapper {
+          border-radius: var(--card-radius);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+          overflow: hidden;
+          transition: transform 0.4s ease, box-shadow 0.4s ease;
+          
+          /* KEY CHANGE: Make the image section grow to fill all available space */
+          flex-grow: 1; 
+          min-height: 250px; /* Ensure a minimum size */
+      }
+      .about-main-image-wrapper:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+      }
+      .about-main-image-wrapper img {
+        /* KEY CHANGE: Make the image fill its container */
+        height: 100%; 
+        width: 100%;
+        object-fit: cover; /* Ensures the image covers the container without stretching */
       }
 
-      .about-item-content:hover,
-      .about-image-counter-box:hover {
-        transform: translateY(-8px); /* Subtle lift on hover */
-        box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15); /* Stronger shadow */
-      }
 
-      /* Counter Item Styling: Sleek and Dynamic */
+      /* Counter Styling */
       .counter-item {
-        border-radius: 1rem !important;
-        background-color: #f8f9fa !important;
+        border-radius: 1rem;
+        background-color: #ffffff; /* Make counters white to contrast with light-gray section background */
         border-left: 5px solid var(--bs-primary);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Add shadow to highlight */
         transition: all 0.4s ease;
-        overflow: hidden;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
       }
       .counter-item:hover {
-        background-color: #fff !important;
-        transform: scale(1.03); /* Slight zoom on hover */
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        background-color: #fcfcfc;
+        transform: scale(1.05); /* Slightly more dramatic lift */
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
       }
       .counter-item .counter-counting span.fw-bold {
-        /* Ensure numbers are visually impactful */
-        font-size: 3rem !important;
-        line-height: 1;
+        font-size: 2.5rem !important; /* Slightly reduced size */
+      }
+      .about-counter-grid {
+          margin-top: 30px; /* Separator between image and counters */
+          /* Ensure this section doesn't grow, so the image takes the rest */
+          flex-shrink: 0; 
+      }
+      
+      /* Section for the remaining content (Why Choose Us Checklists) */
+      .extra-content-section {
+          background-color: #fff;
+          border-radius: var(--card-radius);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+          padding: 40px;
+          margin-top: 3rem; /* Space below the main equal-height section */
       }
 
-      /* --- FEATURE SECTION (WHY CHOOSE US) ENHANCEMENTS --- */
-      /* Feature Card: Floating/Modern Card Effect */
+      /* NEW: Styles for the attractive feature cards */
+      .reason-card {
+        background-color: #f8f9fa; /* Light background for contrast */
+        border-radius: 1rem;
+        border-left: 4px solid var(--bs-primary); /* Primary color accent */
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      }
+      .reason-card:hover {
+          box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+          background-color: #fff;
+      }
+      .reason-card .text-primary {
+          min-width: 50px; /* Gives space for the icon */
+      }
+      
+      /* FEATURE SECTION (Used for Why Choose Us on other pages, adapted here) */
       .feature-item {
         background-color: #fff;
         border-radius: var(--card-radius);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        transition: all 0.4s ease;
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 40px !important; /* Increased inner padding */
+        padding: 40px !important;
       }
-
       .feature-item:hover {
         transform: translateY(-10px);
         box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
       }
 
-      /* Futuristic Icon Background */
       .feature-icon {
         background: linear-gradient(135deg, var(--bs-primary), #00bfff);
         color: #fff;
         border-radius: 1rem;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-        transition: transform 0.5s ease;
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        transition: transform 0.5s ease;
       }
-
       .feature-item:hover .feature-icon {
-        transform: rotateY(180deg); /* Subtle 3D flip animation */
+        transform: rotateY(180deg);
       }
 
-      /* Ensure column height stretch still works with new styling */
-      .col-md-6.col-lg-6.col-xl-3 {
-        /* Resetting default style to allow inner flex to work */
-        display: block;
-        align-items: stretch;
-      }
-
-      /* Footer logo styling */
+      /* FOOTER */
       .footer-logo {
         max-height: 80px;
-        width: auto;
         object-fit: contain;
-        filter: brightness(0) invert(1); /* Makes logo white for dark background */
+        filter: brightness(0) invert(1);
         margin-bottom: 20px;
       }
+      .footer-item .btn.btn-md-square {
+        background-color: transparent !important;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .footer-item .btn.btn-md-square i {
+        color: #fff !important;
+      }
+      .footer-item .btn.btn-md-square:hover {
+        background-color: #0d6efd !important;
+        border-color: #0d6efd !important;
+      }
 
-      /* Remove filter if your logo is already white/light colored */
+      /* RESPONSIVE */
       @media (max-width: 767.98px) {
         .footer-logo {
           max-height: 60px;
+        }
+        /* Disable equal height on small screens for better stacking */
+        .about-equal-height-row {
+            display: block; 
         }
       }
     </style>
@@ -253,18 +295,26 @@
           <div class="col-lg-4 text-center text-lg-end">
             <div class="d-flex justify-content-end">
               <div class="d-flex border-primary pe-3">
-                <a class="btn p-0 text-primary me-3" href="#"
-                  ><i class="fab fa-facebook-f"></i
-                ></a>
-                <a class="btn p-0 text-primary me-3" href="#"
-                  ><i class="fab fa-twitter"></i
-                ></a>
-                <a class="btn p-0 text-primary me-3" href="#"
-                  ><i class="fab fa-instagram"></i
-                ></a>
-                <a class="btn p-0 text-primary me-0" href="#"
-                  ><i class="fab fa-linkedin-in"></i
-                ></a>
+                <a class="btn p-0 text-primary me-3" href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="btn p-0 text-primary me-3" href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a class="btn p-0 text-primary me-3" href="#">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a class="btn p-0 text-primary me-3" href="#">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a
+                  class="btn p-0 text-primary me-0"
+                  href="https://wa.me/97336388919"
+                  target="_blank"
+                  aria-label="Chat on WhatsApp"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -376,17 +426,18 @@
           data-wow-delay="0.3s"
         >
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item"><a href="#">Pages</a></li>
           <li class="breadcrumb-item active text-primary">About</li>
         </ol>
       </div>
     </div>
+
     <div class="container-fluid about-section-bg about py-5">
       <div class="container py-5">
-        <div class="row g-5">
+        <div class="row g-5 about-equal-height-row">
+          
           <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
-            <div class="about-item-content bg-white p-5 h-100">
-              <h4 class="text-primary">About Infologic ITS</h4>
+            <div class="about-item-content bg-white p-5">
+              <h4 class="text-primary">Who We Are</h4>
               <h1 class="display-4 mb-4">
                 Empowering Businesses Through Smart IT, Security, and ERP
                 Innovation
@@ -404,106 +455,217 @@
                 business perfectly — whether on-premises or in the cloud.
               </p>
 
-              <p class="text-dark">
-                <i class="fa fa-check text-primary me-3"></i>All-in-One IT
-                Partner – Hardware, networking, ERP, Zoho, and security under
-                one roof.
-              </p>
-              <p class="text-dark">
-                <i class="fa fa-check text-primary me-3"></i>Proven Expertise –
-                Certified professionals with deep technical knowledge.
-              </p>
-              <p class="text-dark">
-                <i class="fa fa-check text-primary me-3"></i>Customized
-                Solutions – Designed around your business goals and budget.
-              </p>
-              <p class="text-dark mb-4">
-                <i class="fa fa-check text-primary me-3"></i>Dedicated Support –
-                24×7 after-sales service, AMC, and remote assistance.
+              <p class="mt-4">
+                Infologic ITS is an integrated IT solutions provider offering
+                innovative and secure technology for modern businesses. From
+                infrastructure to automation, we help organizations achieve
+                operational excellence through reliable hardware, networking,
+                ERP, and Zoho cloud solutions.
               </p>
 
-              <a
-                class="btn btn-primary rounded-pill py-3 px-5 mt-3"
-                href="about.html"
-                >More Information</a
-              >
+              <div class="row g-4 mt-4">
+                <div class="col-lg-6">
+                  <div
+                    class="p-4 h-100"
+                    style="
+                      background-color: #f8f9fa;
+                      border-radius: 1rem;
+                      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+                    "
+                  >
+                    <h3 class="text-dark mb-3">Our Vision & Mission</h3>
+
+                    <h5 class="text-primary mt-3">Our Vision</h5>
+                    <p>
+                      To be the leading IT solutions and Zoho service provider
+                      in the Gulf region — delivering value through technology,
+                      innovation, and partnership.
+                    </p>
+
+                    <h5 class="text-primary mt-4">Our Mission</h5>
+                    <p class="mb-0">
+                      To empower every business with smart IT infrastructure,
+                      seamless ERP workflows, and secure digital
+                      transformation.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div
+                    class="p-4 h-100"
+                    style="
+                      background-color: #f8f9fa;
+                      border-radius: 1rem;
+                      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+                    "
+                  >
+                    <h3 class="text-dark mb-3">Our Core Values</h3>
+                    <ul class="list-unstyled">
+                      <li class="mb-3">
+                        <strong class="text-primary"
+                          ><i class="fas fa-check-circle me-2"></i>Integrity:</strong
+                        >
+                        We deliver what we promise, every time.
+                      </li>
+                      <li class="mb-3">
+                        <strong class="text-primary"
+                          ><i class="fas fa-check-circle me-2"></i>Innovation:</strong
+                        >
+                        We bring modern technologies to your doorstep.
+                      </li>
+                      <li class="mb-3">
+                        <strong class="text-primary"
+                          ><i class="fas fa-check-circle me-2"></i>Excellence:</strong
+                        >
+                        We ensure reliability, quality, and performance.
+                      </li>
+                      <li class="mb-0">
+                        <strong class="text-primary"
+                          ><i class="fas fa-check-circle me-2"></i>Customer
+                          Focus:</strong
+                        >
+                        We succeed only when our clients succeed.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
-            <div class="about-image-counter-box bg-white h-100">
-              <div class="row g-4 justify-content-center">
-                <div class="col-12">
-                  <div class="rounded bg-light">
-                    <img
-                      src="img\aboutPageOne.png"
-                      class="img-fluid rounded w-100"
-                      alt="Infologic ITS Bahrain"
-                    />
-                  </div>
-                </div>
+            <div class="about-image-column">
+                
+              <div class="about-main-image-wrapper">
+                <img
+                  src="img\aboutPageOne.png"
+                  class="img-fluid"
+                  alt="Infologic ITS Bahrain"
+                  style="border-radius: var(--card-radius)"
+                />
+              </div>
 
-                <div class="col-sm-6">
-                  <div class="counter-item p-3 h-100">
+              <div class="row g-4 about-counter-grid">
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                  <div class="counter-item p-4 h-100">
                     <div class="counter-counting">
                       <span
-                        class="text-primary fs-2 fw-bold"
+                        class="text-primary fw-bold"
                         data-toggle="counter-up"
                         >500</span
                       >
-                      <span class="h1 fw-bold text-primary">+</span>
+                      <span class="fw-bold text-primary fs-3">+</span>
                     </div>
-                    <h4 class="mb-0 text-dark">Projects Completed</h4>
+                    <h5 class="mb-0 text-dark">Projects Completed</h5>
                   </div>
                 </div>
 
-                <div class="col-sm-6">
-                  <div class="counter-item p-3 h-100">
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                  <div class="counter-item p-4 h-100">
                     <div class="counter-counting">
                       <span
-                        class="text-primary fs-2 fw-bold"
+                        class="text-primary fw-bold"
                         data-toggle="counter-up"
                         >15</span
                       >
-                      <span class="h1 fw-bold text-primary">+</span>
+                      <span class="fw-bold text-primary fs-3">+</span>
                     </div>
-                    <h4 class="mb-0 text-dark">Years of Experience</h4>
+                    <h5 class="mb-0 text-dark">Years of Experience</h5>
                   </div>
                 </div>
 
-                <div class="col-sm-6">
-                  <div class="counter-item p-3 h-100">
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                  <div class="counter-item p-4 h-100">
                     <div class="counter-counting">
                       <span
-                        class="text-primary fs-2 fw-bold"
+                        class="text-primary fw-bold"
                         data-toggle="counter-up"
                         >250</span
                       >
-                      <span class="h1 fw-bold text-primary">+</span>
+                      <span class="fw-bold text-primary fs-3">+</span>
                     </div>
-                    <h4 class="mb-0 text-dark">Happy Clients</h4>
+                    <h5 class="mb-0 text-dark">Happy Clients</h5>
                   </div>
                 </div>
 
-                <div class="col-sm-6">
-                  <div class="counter-item p-3 h-100">
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                  <div class="counter-item p-4 h-100">
                     <div class="counter-counting">
                       <span
-                        class="text-primary fs-2 fw-bold"
+                        class="text-primary fw-bold"
                         data-toggle="counter-up"
                         >50</span
                       >
-                      <span class="h1 fw-bold text-primary">+</span>
+                      <span class="fw-bold text-primary fs-3">+</span>
                     </div>
-                    <h4 class="mb-0 text-dark">Expert Team Members</h4>
+                    <h5 class="mb-0 text-dark">Expert Team Members</h5>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+        <div class="row">
+            <div class="col-12 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="extra-content-section p-5">
+                    <h4 class="text-primary">Why Choose Infologic ITS</h4>
+                    <h2 class="mb-5">Our Four Pillars of Partnership</h2>
+                    
+                    <div class="row g-4">
+                        
+                        <div class="col-lg-6 col-md-6">
+                            <div class="p-4 reason-card h-100 d-flex">
+                                <div class="text-primary me-4 mt-1"><i class="fas fa-magic fa-2x"></i></div>
+                                <div>
+                                    <h5 class="text-dark">All-in-One IT Partner</h5>
+                                    <p class="mb-0">Hardware, networking, ERP, Zoho, and security solutions — all under one roof for seamless integration and performance.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6">
+                            <div class="p-4 reason-card h-100 d-flex">
+                                <div class="text-primary me-4 mt-1"><i class="fas fa-certificate fa-2x"></i></div>
+                                <div>
+                                    <h5 class="text-dark">Proven Expertise</h5>
+                                    <p class="mb-0">Certified professionals with deep technical knowledge and years of experience delivering end-to-end IT solutions.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6">
+                            <div class="p-4 reason-card h-100 d-flex">
+                                <div class="text-primary me-4 mt-1"><i class="fas fa-hand-holding-usd fa-2x"></i></div>
+                                <div>
+                                    <h5 class="text-dark">Customized Solutions</h5>
+                                    <p class="mb-0">Tailored IT strategies and systems designed around your business goals, scalability needs, and budget requirements.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6">
+                            <div class="p-4 reason-card h-100 d-flex">
+                                <div class="text-primary me-4 mt-1"><i class="fas fa-headset fa-2x"></i></div>
+                                <div>
+                                    <h5 class="text-dark">Dedicated 24x7 Support</h5>
+                                    <p class="mb-0">Round-the-clock after-sales service, AMC packages, and remote assistance — ensuring your systems stay online and optimized.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a
+                      class="btn btn-primary rounded-pill py-3 px-5 mt-5"
+                      href="service.html"
+                      >Explore Our Services</a
+                    >
+                </div>
+            </div>
+        </div>
+        </div>
     </div>
+    
     <div class="container-fluid feature about-section-bg py-5">
       <div class="container py-5">
         <div
@@ -629,83 +791,146 @@
           <div class="col-xl-12">
             <div class="mb-5">
               <div class="row g-4">
-                <div class="col-md-12 col-lg-5 col-xl-5">
-                  <div class="footer-item pe-lg-4">
-                    <a href="index.html" class="p-0 d-inline-block mb-3">
-                      <img
-                        src="img/logo.png"
-                        alt="Infologic ITS Logo"
-                        class="footer-logo mb-0"
-                      />
-                    </a>
-                    <p class="text-white mb-4" style="max-width: 420px">
+                <div class="col-md-12 col-lg-5 col-xl-4">
+                  <div class="footer-item">
+                    <img
+                      src="img/logo.png"
+                      alt="Infologic ITS Logo"
+                      class="footer-logo"
+                    />
+                    <p class="text-white mb-4">
                       Your trusted partner in IT Infrastructure, Security
                       Systems, and Zoho Cloud Solutions — delivering reliable
-                      technology that helps your business grow.
+                      technology that helps your business grow. Based in
+                      Bahrain.
                     </p>
-                    <div class="footer-btn d-flex">
-                      <a class="btn btn-md-square rounded-circle me-3" href="#">
+                    <div class="d-flex">
+                      <a
+                        class="btn btn-primary btn-md-square rounded-circle me-3"
+                        href="#"
+                      >
                         <i class="fab fa-facebook-f"></i>
                       </a>
-                      <a class="btn btn-md-square rounded-circle me-3" href="#">
+                      <a
+                        class="btn btn-primary btn-md-square rounded-circle me-3"
+                        href="#"
+                      >
                         <i class="fab fa-twitter"></i>
                       </a>
-                      <a class="btn btn-md-square rounded-circle me-3" href="#">
+                      <a
+                        class="btn btn-primary btn-md-square rounded-circle me-3"
+                        href="#"
+                      >
+                        <i class="fab fa-instagram"></i>
+                      </a>
+                      <a
+                        class="btn btn-primary btn-md-square rounded-circle me-3"
+                        href="#"
+                      >
                         <i class="fab fa-linkedin-in"></i>
+                      </a>
+                      <a
+                        class="btn btn-primary btn-md-square rounded-circle me-3"
+                        href="https://wa.me/97336388919"
+                        target="_blank"
+                        aria-label="Chat on WhatsApp"
+                      >
+                        <i class="fab fa-whatsapp"></i>
                       </a>
                     </div>
                   </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3 col-xl-3">
-                  <div class="footer-item">
-                    <h4 class="text-white mb-4">Quick Links</h4>
-                    <a href="about.html"
-                      ><i class="fas fa-angle-right me-2"></i> About Us</a
-                    >
-                    <a href="service.html"
-                      ><i class="fas fa-angle-right me-2"></i> Services</a
-                    >
-                    <a href="contact.html"
-                      ><i class="fas fa-angle-right me-2"></i> Contact</a
-                    >
-                  </div>
-                </div>
+                <div class="col-md-12 col-lg-7 col-xl-8">
+                  <div class="row g-4">
+                    <div class="col-md-6 col-lg-6 col-xl-6">
+                      <div class="footer-item">
+                        <h4 class="text-white mb-4">Office Details</h4>
+                        <div class="d-flex mb-3">
+                          <div
+                            class="btn-md-square bg-primary text-white rounded me-3"
+                          >
+                            <i class="fas fa-map-marker-alt"></i>
+                          </div>
+                          <div>
+                            <h6 class="text-white mb-1">Address</h6>
+                            <p class="mb-0">Manama, Kingdom of Bahrain</p>
+                          </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                          <div
+                            class="btn-md-square bg-primary text-white rounded me-3"
+                          >
+                            <i class="fas fa-envelope"></i>
+                          </div>
+                          <div>
+                            <h6 class="text-white mb-1">Mail Us</h6>
+                            <p class="mb-0">Sales@infologicits.com</p>
+                          </div>
+                        </div>
+                        <div class="d-flex">
+                          <div
+                            class="btn-md-square bg-primary text-white rounded me-3"
+                          >
+                            <i class="fa fa-phone-alt"></i>
+                          </div>
+                          <div>
+                            <h6 class="text-white mb-1">Telephone</h6>
+                            <p class="mb-0">+973 36388919</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
-                <div class="col-md-6 col-lg-4 col-xl-4">
-                  <div class="footer-item">
-                    <h4 class="text-white mb-4">Contact Information</h4>
-                    <div class="d-flex mb-3">
-                      <div
-                        class="btn-md-square bg-primary text-white rounded me-3"
-                      >
-                        <i class="fas fa-map-marker-alt"></i>
-                      </div>
-                      <div>
-                        <h6 class="text-white mb-1">Address</h6>
-                        <p class="mb-0">Manama, Kingdom of Bahrain</p>
-                      </div>
-                    </div>
-                    <div class="d-flex mb-3">
-                      <div
-                        class="btn-md-square bg-primary text-white rounded me-3"
-                      >
-                        <i class="fas fa-envelope"></i>
-                      </div>
-                      <div>
-                        <h6 class="text-white mb-1">Mail Us</h6>
-                        <p class="mb-0">Sales@infologicits.com</p>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                      <div class="footer-item">
+                        <h4 class="text-white mb-4">Quick Links</h4>
+                        <div class="d-flex flex-column align-items-start">
+                          <a class="text-body mb-3" href="index.html"
+                            ><i class="fa fa-check text-primary me-2"></i
+                            >Home</a
+                          >
+                          <a class="text-body mb-3" href="about.html"
+                            ><i class="fa fa-check text-primary me-2"></i>About
+                            Us</a
+                          >
+                          <a class="text-body mb-3" href="service.html"
+                            ><i class="fa fa-check text-primary me-2"></i
+                            >Services</a
+                          >
+                          <a class="text-body mb-3" href="contact.html"
+                            ><i class="fa fa-check text-primary me-2"></i
+                            >Contact</a
+                          >
+                        </div>
                       </div>
                     </div>
-                    <div class="d-flex">
-                      <div
-                        class="btn-md-square bg-primary text-white rounded me-3"
-                      >
-                        <i class="fa fa-phone-alt"></i>
-                      </div>
-                      <div>
-                        <h6 class="text-white mb-1">Telephone</h6>
-                        <p class="mb-0">+973 36388919</p>
+
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                      <div class="footer-item">
+                        <h4 class="text-white mb-4">Our Services</h4>
+                        <div class="d-flex flex-column align-items-start">
+                          <a class="text-body mb-3" href="service.html"
+                            ><i class="fa fa-check text-primary me-2"></i
+                            >Hardware Solutions</a
+                          >
+                          <a class="text-body mb-3" href="service.html"
+                            ><i class="fa fa-check text-primary me-2"></i>System
+                            Integration</a
+                          >
+                          <a class="text-body mb-3" href="service.html"
+                            ><i class="fa fa-check text-primary me-2"></i>ERP
+                            Solutions</a
+                          >
+                          <a class="text-body mb-3" href="service.html"
+                            ><i class="fa fa-check text-primary me-2"></i>Zoho
+                            Cloud Solutions</a
+                          >
+                          <a class="text-body mb-3" href="service.html"
+                            ><i class="fa fa-check text-primary me-2"></i
+                            >Security Systems</a
+                          >
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -729,10 +954,12 @@
           </div>
           <div class="col-md-6 text-center text-md-start text-body">
             Designed By
-            <a class="border-bottom text-white" href="https://htmlcodex.com"
-              >HTML Codex</a
+            <a
+              class="border-bottom text-white"
+              target="_blank"
+              href="https://asmbahrain.com/"
+              >A&S Management</a
             >
-            | Customized for Infologic ITS
           </div>
         </div>
       </div>
