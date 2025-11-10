@@ -8,7 +8,6 @@
     </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <!-- SEO META TAGS -->
     <meta
       name="keywords"
       content="Infologic ITS Bahrain, Contact Infologic ITS, IT Solutions Bahrain, Zoho Partner Bahrain, ERP Implementation, CCTV Security, System Integration, Structured Cabling, Cloud Solutions, Zoho Books, Zoho CRM, Network Solutions"
@@ -18,12 +17,10 @@
       content="Contact Infologic ITS in Bahrain for expert IT solutions, ERP systems, Zoho cloud services, security systems, and more. We are an authorized Zoho Partner offering 24×7 support."
     />
 
-    <!-- ✅ Favicon (default 32x32 optimal for browsers) -->
     <link rel="icon" type="image/png" sizes="32x32" href="img/logo.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="img/logo.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="img/logo.png" />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Infologic ITS - Contact Us" />
     <meta
       property="og:description"
@@ -33,7 +30,6 @@
     <meta property="og:url" content="https://infologicits.com/contact.html" />
     <meta property="og:image" content="https://infologicits.com/img/logo.png" />
 
-    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Infologic ITS - Contact Us" />
     <meta
@@ -45,7 +41,6 @@
       content="https://infologicits.com/img/logo.png"
     />
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -53,7 +48,6 @@
       rel="stylesheet"
     />
 
-    <!-- Icons -->
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -63,12 +57,10 @@
       rel="stylesheet"
     />
 
-    <!-- Libraries -->
     <link rel="stylesheet" href="lib/animate/animate.min.css" />
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
 
-    <!-- Bootstrap & Custom Styles -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
 
@@ -90,6 +82,12 @@
       .col-md-6.col-lg-6.col-xl-3 {
         display: flex;
         align-items: stretch;
+      }
+
+      /* Footer styling for relative positioning */
+      .footer {
+          position: relative;
+          overflow: hidden;
       }
 
       /* Footer logo styling */
@@ -132,6 +130,101 @@
           max-height: 60px;
         }
       }
+
+      /* --- START: Floating Layered Flow Effect CSS (Footer) --- */
+      .footer::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 0; 
+          pointer-events: none;
+          
+          /* 8 small, dense white dots (dust/stars) for a shimmering field effect */
+          background-image: 
+              radial-gradient(circle at 10% 90%, rgba(255, 255, 255, 0.1) 1px, transparent 0), 
+              radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.15) 2px, transparent 0), 
+              radial-gradient(circle at 35% 55%, rgba(255, 255, 255, 0.08) 1px, transparent 0), 
+              radial-gradient(circle at 60% 80%, rgba(255, 255, 255, 0.12) 3px, transparent 0), 
+              radial-gradient(circle at 20% 40%, rgba(255, 255, 255, 0.05) 1.5px, transparent 0), 
+              radial-gradient(circle at 75% 30%, rgba(255, 255, 255, 0.18) 4px, transparent 0), 
+              radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.07) 2px, transparent 0), 
+              radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.1) 1px, transparent 0); 
+
+          /* Smaller background sizes for high density and visual noise */
+          background-size: 300px 300px, 450px 450px, 200px 200px, 500px 500px, 350px 350px, 600px 600px, 400px 400px, 250px 250px; 
+          
+          /* All 8 dots get a movement animation + the entire field gets a rotation */
+          animation-name: floatFooterNebulaA, floatFooterNebulaB, floatFooterNebulaC, floatFooterNebulaA, floatFooterNebulaB, floatFooterNebulaC, floatFooterNebulaA, floatFooterNebulaB, slowRotation;
+          animation-duration: 25s, 30s, 35s, 40s, 20s, 45s, 50s, 22s, 120s; /* Rotation is very slow (120s) */
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+      }
+
+      .floating-whatsapp,
+      .floating-call {
+          position: fixed;
+          right: 30px;
+          z-index: 1000; /* Above all content */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          display: flex; /* To center the icon */
+          align-items: center;
+          justify-content: center;
+      }
+
+      /* Call Button - Positioned above back-to-top */
+      .floating-call {
+          bottom: 105px; 
+      }
+
+      /* WhatsApp Button - Positioned above Call button */
+      .floating-whatsapp {
+          bottom: 180px;
+          background-color: #25D366 !important; /* WhatsApp Green */
+          border-color: #25D366 !important;
+          color: white !important;
+      }
+
+      .floating-whatsapp:hover {
+          background-color: #128C7E !important;
+          border-color: #128C7E !important;
+      }
+
+      /* Media Query adjustment for smaller screens */
+      @media (max-width: 767.98px) {
+          .floating-whatsapp,
+          .floating-call,
+          .back-to-top {
+              right: 15px; /* Smaller gap from the edge on mobile */
+          }
+      }
+
+      /* Keyframe Set A: Slow-moderate float, subtle right sway */
+      @keyframes floatFooterNebulaA {
+          from { background-position: 0 0; }
+          to { background-position: 100px 800px; }
+      }
+
+      /* Keyframe Set B: Moderate float, left sway */
+      @keyframes floatFooterNebulaB {
+          from { background-position: 0 0; }
+          to { background-position: -150px 900px; }
+      }
+
+      /* Keyframe Set C: Faster float, aggressive diagonal movement */
+      @keyframes floatFooterNebulaC {
+          from { background-position: 0 0; }
+          to { background-position: 250px 1000px; }
+      }
+
+      /* New: Very slow rotation of the entire field for a layered effect */
+      @keyframes slowRotation {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+      }
+      /* --- END: Floating Layered Flow Effect CSS (Footer) --- */
     </style>
   </head>
 
@@ -305,7 +398,6 @@
           data-wow-delay="0.3s"
         >
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <!-- <li class="breadcrumb-item"><a href="#">Pages</a></li> -->
           <li class="breadcrumb-item active text-primary">Contact</li>
         </ol>
       </div>
@@ -377,17 +469,6 @@
                       <label for="phone">Your Phone</label>
                     </div>
                   </div>
-                  <!-- <div class="col-lg-12 col-xl-6">
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control border-0"
-                        id="project"
-                        placeholder="Project"
-                      />
-                      <label for="project">Subject/Service</label>
-                    </div>
-                  </div> -->
                   <div class="col-lg-12 col-xl-6">
                     <div class="form-floating">
                       <input
@@ -541,7 +622,6 @@
                       >
                         <i class="fab fa-linkedin-in"></i>
                       </a>
-                      <!-- ✅ WhatsApp Icon Added -->
                       <a
                         class="btn btn-primary btn-md-square rounded-circle me-3"
                         href="https://wa.me/97336388919"
@@ -674,6 +754,21 @@
         </div>
       </div>
     </div>
+    <a
+      href="https://wa.me/97336388919"
+      target="_blank"
+      class="btn btn-lg-square rounded-circle floating-whatsapp"
+      aria-label="Chat on WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a
+      href="tel:+97336388919"
+      class="btn btn-primary btn-lg-square rounded-circle floating-call"
+      aria-label="Call Experts"
+    >
+      <i class="fa fa-phone-alt"></i>
+    </a>
     <a
       href="#"
       class="btn btn-primary btn-lg-square rounded-circle back-to-top"
