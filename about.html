@@ -7,11 +7,11 @@
 
     <meta
       name="keywords"
-      content="Infologic ITS Bahrain, IT Solutions Bahrain, Zoho Partner Bahrain, ERP Implementation, Hardware Solutions, System Integration, Structured Cabling, IT Consultancy, CCTV Security Systems, Cloud Solutions, Zoho Books, Zoho CRM, Network Solutions"
+      content="Infologic ITS Bahrain, IT Solutions Bahrain, Zoho Support Bahrain, ERP Implementation, Hardware Solutions, System Integration, Structured Cabling, IT Consultancy, CCTV Security Systems, Cloud Solutions, Zoho Books, Zoho CRM, Network Solutions"
     />
     <meta
       name="description"
-      content="Infologic ITS empowers businesses through smart IT, security, and ERP innovation. We provide hardware, system integration, structured cabling, ERP, Zoho cloud, and CCTV solutions. Authorized Zoho Partner in Bahrain with 24×7 support."
+      content="Infologic ITS empowers businesses through smart IT, security, and ERP innovation. We provide hardware, system integration, structured cabling, ERP, Zoho cloud, and CCTV solutions. Authorized Zoho Support in Bahrain with 24×7 support."
     />
 
     <link rel="icon" type="image/png" href="img/logo.png" />
@@ -79,14 +79,19 @@
 
       /* --- GLOBAL STYLES --- */
       .bg-breadcrumb {
+        /* UPDATED: Set the new background image */
+        background: url('img/serviceBRDCM.png') center center no-repeat;
         background-size: cover;
         position: relative;
+        /* Default background color for the breadcrumb/hero before the ::before overlay */
+        background-color: var(--bs-dark-accent); 
       }
       .bg-breadcrumb::before {
         content: "";
         position: absolute;
         inset: 0;
-        /* background: rgba(0, 0, 0, 0.4); */
+        /* UPDATED: Stronger dark overlay for readability */
+        background: rgba(0, 0, 0, 0.402); 
         z-index: 1;
       }
       .bg-breadcrumb > * {
@@ -96,6 +101,12 @@
       .bg-breadcrumb .display-4 {
         color: #fff;
       }
+      /* NEW: Hero Title Styling */
+      .bg-breadcrumb .display-2 {
+        font-weight: 700;
+        text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+      }
+
 
       /* ABOUT SECTION */
       /* Applying height and display flex to the row for equal height columns */
@@ -514,24 +525,17 @@
         </div>
       </div>
     </div>
+    
     <div class="container-fluid bg-breadcrumb">
-      <div class="container text-center py-5" style="max-width: 900px">
-        <h4
-          class="text-white display-4 mb-4 wow fadeInDown"
-          data-wow-delay="0.1s"
-        >
-          About Us
-        </h4>
-        <ol
-          class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown"
-          data-wow-delay="0.3s"
-        >
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active text-primary">About</li>
-        </ol>
-      </div>
+      <div class="container text-center py-5 py-md-5" style="max-width: 900px">
+        <h1 class="text-white display-2 mb-3 wow fadeInDown" data-wow-delay="0.1s">
+            Building Your Digital Foundation.
+        </h1>
+        <h5 class="text-white-50 mb-4 wow fadeInUp" data-wow-delay="0.3s">
+            Trusted IT & Zoho Solutions for Bahrain's Leading Businesses.
+        </h5>
+        </div>
     </div>
-
     <div class="container-fluid about-section-bg about py-5">
       <div class="container py-5">
         <div class="row g-5 about-equal-height-row">
