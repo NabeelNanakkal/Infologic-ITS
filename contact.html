@@ -123,6 +123,81 @@
       }
       /* END: Breadcrumb Styling */
 
+      /* ---------------------------------------------------------------------------------- */
+      /* --- START: Custom Logo Loader CSS (Exact copy from index.html) --- */
+
+      /* Define the pulse animation (for scale and opacity) */
+      @keyframes pulse {
+        0% {
+          transform: scale(0.95);
+          opacity: 0.6;
+        }
+        50% {
+          transform: scale(1.05); /* Slightly larger scale for a better 'pop' */
+          opacity: 1;
+        }
+        100% {
+          transform: scale(0.95);
+          opacity: 0.6;
+        }
+      }
+
+      /* New Animation: Subtle float and slow spin for movement */
+      @keyframes floatSpin {
+        0% {
+          transform: translateY(0) rotate(0deg);
+        }
+        25% {
+          transform: translateY(-8px) rotate(-2deg); /* Float up and slight counter-clockwise rotation */
+        }
+        75% {
+          transform: translateY(5px) rotate(2deg); /* Float down and slight clockwise rotation */
+        }
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+      }
+
+      /* New Animation: subtle vertical bounce for the dots */
+      @keyframes dotBounce {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px); /* Bounce up */
+        }
+      }
+
+      /* Apply combined animations to the logo */
+      .logo-loader {
+        max-width: 150px; /* Note: size is also set inline on the HTML element */
+        height: auto;
+        /* Apply both pulse and floatSpin animations */
+        animation: pulse 2s infinite ease-in-out, floatSpin 10s infinite linear;
+      }
+
+      .dots-loader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px; /* Space from logo */
+        width: 100px; /* Container width for dot spacing */
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        background-color: #0d6efd; /* Primary blue color */
+        border-radius: 50%;
+        margin: 0 5px;
+        animation: dotBounce 0.8s infinite ease-in-out;
+        /* Use CSS variable to delay each dot's animation */
+        animation-delay: calc(0.1s * var(--i));
+      }
+      /* --- END: Custom Logo Loader CSS (Exact copy from index.html) --- */
+      /* ---------------------------------------------------------------------------------- */
+
+
       /* Footer styling for relative positioning */
       .footer {
         position: relative;
@@ -321,14 +396,22 @@
   <body>
     <div
       id="spinner"
-      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center flex-column"
     >
-      <div
-        class="spinner-border text-primary"
-        style="width: 3rem; height: 3rem"
-        role="status"
-      >
-        <span class="sr-only">Loading...</span>
+      <img
+        src="img/logo.png"
+        alt="Loading Logo"
+        class="logo-loader mb-3"
+        style="
+          max-width: 150px;
+          height: auto;
+          filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
+        "
+      />
+      <div class="dots-loader">
+        <div class="dot" style="--i: 1"></div>
+        <div class="dot" style="--i: 2"></div>
+        <div class="dot" style="--i: 3"></div>
       </div>
     </div>
     <div
@@ -877,5 +960,24 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
     <script src="js/main.js"></script>
-  </body>
+    
+    <script>
+      // Logic to hide the spinner once the page is loaded
+      // (function ($) {
+      //   "use strict";
+
+      //   var spinner = function () {
+      //     setTimeout(function () {
+      //       if ($('#spinner').length > 0) {
+      //         // Removes the 'show' class which covers the screen
+      //         $('#spinner').removeClass('show');
+      //       }
+      //     }, 1); // A minimal delay ensures the browser renders the loader before hiding it
+      //   };
+
+      //   // Call the function
+      //   spinner();
+      // })(jQuery);
+    </script>
+    </body>
 </html>

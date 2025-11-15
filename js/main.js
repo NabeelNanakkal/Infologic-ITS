@@ -1,15 +1,17 @@
 (function ($) {
     "use strict";
 
-    // Spinner
+    // Spinner - Shows for 2 seconds then fades out
     var spinner = function () {
         setTimeout(function () {
             if ($('#spinner').length > 0) {
-                $('#spinner').removeClass('show');
+                $('#spinner').fadeOut(500, function() {
+                    $(this).remove();
+                });
             }
-        }, 1);
+        }, 2000); // Show loader for 2 seconds
     };
-    spinner(0);
+    spinner();
     
     
     // Initiate the wowjs
